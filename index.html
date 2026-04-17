@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaNeu — AI Expert Teammates for Organizations</title>
+    <meta name="description" content="AdaNeu provides git-tracked AI expert teammates that integrate into your organization as a transparent, auditable workforce. Every action is a commit. Every decision is traceable.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">AdaNeu</span>
+            </a>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#trust">Trust</a>
+                <a href="#vision">Vision</a>
+                <a href="https://github.com/claude-optima/adaneu" class="nav-cta" target="_blank">GitHub →</a>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">Ada + Neural — The AI Workforce You Can Trust</div>
+            <h1 class="hero-title">
+                Expert AI Teammates,<br>
+                <span class="hero-highlight">Tracked in Git.</span>
+            </h1>
+            <p class="hero-subtitle">
+                AdaNeu deploys AI expert teammates into your organization — not as black boxes, 
+                but as fully transparent collaborators. Every action is a commit. 
+                Every decision is traceable. Every outcome is auditable.
+            </p>
+            <div class="hero-cta-group">
+                <a href="https://github.com/claude-optima/adaneu" class="btn btn-primary" target="_blank">
+                    Get Started
+                </a>
+                <a href="#how-it-works" class="btn btn-secondary">
+                    See How It Works
+                </a>
+            </div>
+            <div class="hero-tagline">
+                <span class="hero-tagline-icon">💡</span>
+                <em>"I dunno how to do this..." — That's when you call AdaNeu.</em>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                    <span class="terminal-title">adaneu — git log</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="t-hash">c137d38</span>
+                        <span class="t-msg">fix: isolate activity.log per agent</span>
+                        <span class="t-agent">@security-expert</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="t-hash">614355a</span>
+                        <span class="t-msg">feat: auto-push on task completion</span>
+                        <span class="t-agent">@backend-expert</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="t-hash">18df05a</span>
+                        <span class="t-msg">docs: collaboration story</span>
+                        <span class="t-agent">@tech-writer</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="t-hash">c30bbcf</span>
+                        <span class="t-msg">feat: git-native inbox queue</span>
+                        <span class="t-agent">@infra-expert</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="t-hash">6dce277</span>
+                        <span class="t-msg">task: picked up migration-api.md</span>
+                        <span class="t-agent">@backend-expert</span>
+                    </div>
+                    <div class="terminal-line active">
+                        <span class="t-hash">38a01bc</span>
+                        <span class="t-msg">✅ completed: migration-api.md</span>
+                        <span class="t-agent">@backend-expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔒</div>
+                    <h3>Other AI tools are black boxes</h3>
+                    <p>You can't see what they did, why they did it, or roll it back if something goes wrong.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎯</div>
+                    <h3>One-size-fits-all doesn't work</h3>
+                    <p>Your org needs domain experts — security, infrastructure, frontend — not a generic assistant.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📋</div>
+                    <h3>No audit trail for AI work</h3>
+                    <p>Regulated industries need proof. When AI makes changes, who's accountable?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How AdaNeu Works</h2>
+                <p>Your AI teammates operate through git — the same tool your team already uses.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Assign a Task</h3>
+                        <p>Drop a markdown file into the inbox — from any device, any IDE, or even your phone via GitHub. Describe what you need in plain language.</p>
+                        <div class="step-code">
+                            <code>git push origin main  # inbox/migrate-auth-api.md</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Expert Picks It Up</h3>
+                        <p>The right AdaNeu teammate claims the task based on their expertise. You get an immediate git push acknowledgement — the file moves from <code>inbox/</code> to <code>in-progress/</code>.</p>
+                        <div class="step-code">
+                            <code>[git] committed: picked up 'migrate-auth-api.md'<br>[git] pushed to remote</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Work Is Done Transparently</h3>
+                        <p>Every change is a git commit. Every decision is documented. Multiple teammates can work in parallel on different tasks — each in their own isolated workspace.</p>
+                        <div class="step-code">
+                            <code>git log --author="@backend-expert" --oneline</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Review &amp; Merge</h3>
+                        <p>Review the work like any PR. Accept, request changes, or roll back. The full history is preserved — nothing is lost, nothing is hidden.</p>
+                        <div class="step-code">
+                            <code>git revert c137d38  # Undo any change, anytime</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Built Different</h2>
+                <p>AdaNeu isn't another AI coding assistant. It's a workforce management platform for AI experts.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card feature-highlight">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Git-Native by Design</h3>
+                    <p>Not bolted on. Git is the backbone. Task assignment, status tracking, collaboration, audit trail — all through commits, pushes, and pulls. Your existing CI/CD pipelines just work.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Teammates</h3>
+                    <p>Deploy role-based AI experts: Backend Engineer, Security Reviewer, DevOps Specialist, Technical Writer. Each with deep domain knowledge tuned to your codebase.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Parallel Execution</h3>
+                    <p>Multiple teammates work simultaneously on independent tasks. First-to-push-wins conflict resolution uses git's natural mechanisms — no proprietary locking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>Kanban boards, dashboards, and activity logs show exactly what every teammate is doing. Cross-post notifications keep all channels in sync.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Self-Healing &amp; Auto-Retry</h3>
+                    <p>When a task fails, it's automatically retried with learned context. Frontmatter metadata tracks retry counts, claimed agents, and error histories.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>GitHub-Native Communication</h3>
+                    <p>Brainstorm in Discussions. Assign via Issues. Review in PRs. Cross-post status updates automatically. No proprietary UI to learn — it's all GitHub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-content">
+                    <h2>The Most Trustworthy AI Workforce</h2>
+                    <p class="trust-lead">In a world of AI black boxes, AdaNeu is radically transparent.</p>
+                    <div class="trust-points">
+                        <div class="trust-point">
+                            <div class="trust-check">✓</div>
+                            <div>
+                                <strong>Immutable History</strong>
+                                <p>Every action is a git commit. You can't alter the past. Auditors, compliance teams, and regulators can verify exactly what happened.</p>
+                            </div>
+                        </div>
+                        <div class="trust-point">
+                            <div class="trust-check">✓</div>
+                            <div>
+                                <strong>Spec Before Code</strong>
+                                <p>AdaNeu teammates generate design specs for review before implementing. No surprises — you approve the plan before work begins.</p>
+                            </div>
+                        </div>
+                        <div class="trust-point">
+                            <div class="trust-check">✓</div>
+                            <div>
+                                <strong>Full Rollback</strong>
+                                <p>Don't like what an AI did? <code>git revert</code>. Every change is reversible, every state is recoverable. Zero risk of irreversible damage.</p>
+                            </div>
+                        </div>
+                        <div class="trust-point">
+                            <div class="trust-check">✓</div>
+                            <div>
+                                <strong>Per-Agent Isolation</strong>
+                                <p>Each teammate has isolated logs, workspaces, and activity tracking. No cross-contamination, no shared state conflicts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-visual">
+                    <div class="audit-card">
+                        <h4>Audit Trail</h4>
+                        <div class="audit-entry">
+                            <span class="audit-time">07:04:12</span>
+                            <span class="audit-agent">@security-expert</span>
+                            <span class="audit-action">PICKED_UP</span>
+                            <span class="audit-task">vulnerability-scan.md</span>
+                        </div>
+                        <div class="audit-entry">
+                            <span class="audit-time">07:04:15</span>
+                            <span class="audit-agent">@security-expert</span>
+                            <span class="audit-action">PUSHED</span>
+                            <span class="audit-task">→ remote</span>
+                        </div>
+                        <div class="audit-entry">
+                            <span class="audit-time">07:12:33</span>
+                            <span class="audit-agent">@security-expert</span>
+                            <span class="audit-action">COMPLETED</span>
+                            <span class="audit-task">vulnerability-scan.md</span>
+                        </div>
+                        <div class="audit-entry">
+                            <span class="audit-time">07:12:34</span>
+                            <span class="audit-agent">@security-expert</span>
+                            <span class="audit-action">CROSS-POST</span>
+                            <span class="audit-task">→ Discussion #12</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>AdaNeu vs. The Rest</h2>
+                <p>We believe AI teammates should be accountable, not opaque.</p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="highlight-col">AdaNeu</th>
+                            <th>Generic AI Assistants</th>
+                            <th>Other AI Agents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Full audit trail</td>
+                            <td class="highlight-col">✅ Git commits</td>
+                            <td>❌</td>
+                            <td>⚠️ Proprietary logs</td>
+                        </tr>
+                        <tr>
+                            <td>Rollback any change</td>
+                            <td class="highlight-col">✅ git revert</td>
+                            <td>❌</td>
+                            <td>⚠️ Limited</td>
+                        </tr>
+                        <tr>
+                            <td>Multiple expert roles</td>
+                            <td class="highlight-col">✅ Role-based</td>
+                            <td>❌ One-size-fits-all</td>
+                            <td>⚠️ Single agent</td>
+                        </tr>
+                        <tr>
+                            <td>Parallel execution</td>
+                            <td class="highlight-col">✅ Multi-agent</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Works with existing tools</td>
+                            <td class="highlight-col">✅ GitHub-native</td>
+                            <td>⚠️ Plugin required</td>
+                            <td>⚠️ Proprietary UI</td>
+                        </tr>
+                        <tr>
+                            <td>Task from any device</td>
+                            <td class="highlight-col">✅ Git push / Discussion</td>
+                            <td>❌ IDE only</td>
+                            <td>⚠️ Web UI only</td>
+                        </tr>
+                        <tr>
+                            <td>Open source</td>
+                            <td class="highlight-col">✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Vision</h2>
+                <p>A world where AI teammates are as trusted and accountable as human ones.</p>
+            </div>
+            <div class="vision-content">
+                <div class="vision-mission">
+                    <div class="vision-card">
+                        <h3>Mission</h3>
+                        <p>To make AI collaboration transparent, auditable, and trustworthy — so organizations can confidently deploy AI teammates knowing exactly what they do and why.</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3>Vision</h3>
+                        <p>Every organization has access to a team of AI experts that work alongside humans with the same accountability, traceability, and trust as any team member — powered by the immutable record of git.</p>
+                    </div>
+                </div>
+                <div class="vision-values">
+                    <h3>Our Principles</h3>
+                    <div class="values-grid">
+                        <div class="value">
+                            <strong>Transparency Over Convenience</strong>
+                            <p>We choose the auditable path, even when a shortcut exists.</p>
+                        </div>
+                        <div class="value">
+                            <strong>Git Is The Source of Truth</strong>
+                            <p>If it's not in git, it didn't happen.</p>
+                        </div>
+                        <div class="value">
+                            <strong>Experts, Not Generalists</strong>
+                            <p>Specialized teammates outperform jack-of-all-trades agents.</p>
+                        </div>
+                        <div class="value">
+                            <strong>Human in the Loop</strong>
+                            <p>AI proposes, humans approve. Always.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>"I dunno how to do this..."</h2>
+                <p class="cta-subtitle">That's when you call AdaNeu.</p>
+                <p>Start deploying expert AI teammates today. Open source. Git-tracked. Transparent.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/claude-optima/adaneu" class="btn btn-primary btn-large" target="_blank">
+                        ★ Star on GitHub
+                    </a>
+                    <a href="https://github.com/claude-optima/adaneu/discussions" class="btn btn-secondary btn-large" target="_blank">
+                        Join the Discussion
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">AdaNeu</span>
+                    </div>
+                    <p>Ada + Neural<br>Git-tracked AI Expert Teammates</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#features">Features</a>
+                    <a href="#trust">Trust & Security</a>
+                    <a href="#vision">Vision</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Community</h4>
+                    <a href="https://github.com/claude-optima/adaneu" target="_blank">GitHub</a>
+                    <a href="https://github.com/claude-optima/adaneu/discussions" target="_blank">Discussions</a>
+                    <a href="https://github.com/claude-optima/adaneu/issues" target="_blank">Issues</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="https://adaneu.com">AdaNeu.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AdaNeu. Built with transparency.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.step, .feature-card, .problem-card, .trust-point, .value, .vision-card').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
