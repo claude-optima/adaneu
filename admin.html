@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — AdaNeu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">AdaNeu</span>
+                <span class="nav-badge">Admin</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Public Site</a>
+                <a href="#organizations">Organizations</a>
+                <a href="#submissions">Submissions</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <!-- Stats Overview -->
+        <section class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-value" id="totalOrgs">0</div>
+                <div class="stat-label">Organizations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalTeammates">0</div>
+                <div class="stat-label">Active Teammates</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalTokens">0</div>
+                <div class="stat-label">Tokens This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalRevenue">$0</div>
+                <div class="stat-label">Monthly Revenue</div>
+            </div>
+        </section>
+
+        <!-- Pending Submissions -->
+        <section class="dashboard-section" id="submissions">
+            <div class="section-header">
+                <h2>Pending Submissions</h2>
+                <button class="btn-refresh" onclick="loadSubmissions()">↻ Refresh</button>
+            </div>
+            <div class="submissions-table" id="submissionsTable">
+                <div class="empty-state">No submissions yet. Submissions from the Get Started wizard will appear here.</div>
+            </div>
+        </section>
+
+        <!-- Organizations -->
+        <section class="dashboard-section" id="organizations">
+            <div class="section-header">
+                <h2>Organizations</h2>
+                <button class="btn-action" onclick="showAddOrg()">+ Add Organization</button>
+            </div>
+            <div class="org-grid" id="orgGrid">
+                <div class="empty-state">No organizations onboarded yet.</div>
+            </div>
+        </section>
+
+        <!-- Usage Tracking -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>Usage Overview</h2>
+                <select id="usagePeriod" onchange="updateUsageView()">
+                    <option value="today">Today</option>
+                    <option value="week" selected>This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+            </div>
+            <div class="usage-chart" id="usageChart">
+                <div class="chart-placeholder">
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 30%"><span>Mon</span></div>
+                        <div class="chart-bar" style="height: 65%"><span>Tue</span></div>
+                        <div class="chart-bar" style="height: 45%"><span>Wed</span></div>
+                        <div class="chart-bar" style="height: 80%"><span>Thu</span></div>
+                        <div class="chart-bar" style="height: 55%"><span>Fri</span></div>
+                        <div class="chart-bar" style="height: 20%"><span>Sat</span></div>
+                        <div class="chart-bar" style="height: 15%"><span>Sun</span></div>
+                    </div>
+                    <div class="chart-label">Token Usage by Day</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Feed -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>Activity Feed</h2>
+            </div>
+            <div class="activity-feed" id="activityFeed">
+                <div class="activity-item">
+                    <div class="activity-icon">🚀</div>
+                    <div class="activity-content">
+                        <strong>AdaNeu Platform</strong> launched
+                        <div class="activity-time">Just now</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">🌐</div>
+                    <div class="activity-content">
+                        <strong>adaneu.com</strong> — Azure Static Web App deployed
+                        <div class="activity-time">Today</div>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">📝</div>
+                    <div class="activity-content">
+                        <strong>Customer intake wizard</strong> — live on /get-started
+                        <div class="activity-time">Today</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Organization Modal -->
+    <div class="modal-overlay" id="addOrgModal">
+        <div class="modal-content modal-wide">
+            <h2>Add Organization</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Organization Name</label>
+                    <input type="text" id="newOrgName" placeholder="Acme Corp">
+                </div>
+                <div class="form-group">
+                    <label>Contact Email</label>
+                    <input type="email" id="newOrgEmail" placeholder="admin@acme.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Plan</label>
+                    <select id="newOrgPlan">
+                        <option value="starter">Starter</option>
+                        <option value="business">Business</option>
+                        <option value="enterprise">Enterprise</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Teammates</label>
+                    <input type="number" id="newOrgTeammates" value="1" min="1">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="hideAddOrg()">Cancel</button>
+                <button class="btn-save" onclick="addOrganization()">Add Organization</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

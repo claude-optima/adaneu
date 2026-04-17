@@ -1,0 +1,642 @@
+/* ===== Wizard Styles ===== */
+
+.wizard-main {
+    min-height: 100vh;
+    padding: 6rem 1.5rem 3rem;
+}
+
+.wizard-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Progress Bar */
+.wizard-progress {
+    margin-bottom: 3rem;
+}
+
+.progress-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+    width: 25%;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+}
+
+.step.active,
+.step.completed {
+    opacity: 1;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.step.active .step-number {
+    background: #6366f1;
+    color: white;
+}
+
+.step.completed .step-number {
+    background: #22c55e;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.step.active .step-label {
+    color: white;
+}
+
+/* Wizard Steps */
+.wizard-step {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.wizard-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-header {
+    margin-bottom: 2rem;
+}
+
+.step-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.step-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.form-group select option {
+    background: #1a1a2e;
+    color: white;
+}
+
+/* Teammate Grid */
+.teammate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.teammate-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.teammate-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.teammate-card.selected {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.teammate-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.teammate-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.teammate-card p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+}
+
+.teammate-tokens {
+    font-size: 0.7rem;
+    color: rgba(99, 102, 241, 0.8);
+    font-weight: 500;
+}
+
+.teammate-check {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #6366f1;
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.teammate-card.selected .teammate-check {
+    display: flex;
+}
+
+.selected-count {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Workload Config */
+.config-section {
+    margin-bottom: 2rem;
+}
+
+.config-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.config-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.radio-card,
+.checkbox-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.radio-card:hover,
+.checkbox-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.radio-card input,
+.checkbox-card input {
+    margin-top: 3px;
+    accent-color: #6366f1;
+}
+
+.radio-content strong,
+.checkbox-content strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.radio-content p,
+.checkbox-content p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.config-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    margin-top: 0.5rem;
+}
+
+.config-badge.premium {
+    background: rgba(234, 179, 8, 0.2);
+    color: #fbbf24;
+}
+
+.config-price {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: rgba(34, 197, 94, 0.8);
+    margin-top: 0.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Estimate */
+.estimate-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.estimate-summary {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.estimate-org {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estimate-section {
+    margin-bottom: 1.5rem;
+}
+
+.estimate-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #818cf8;
+}
+
+.estimate-teammates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.estimate-teammate-tag {
+    padding: 0.35rem 0.75rem;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #c7d2fe;
+}
+
+.estimate-config p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.estimate-config strong {
+    color: white;
+}
+
+/* Cost Breakdown */
+.estimate-section.pricing {
+    margin-bottom: 0;
+}
+
+.cost-breakdown {
+    margin-bottom: 1rem;
+}
+
+.cost-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cost-line .label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.cost-line .amount {
+    font-weight: 600;
+    color: white;
+}
+
+.cost-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 2px solid rgba(99, 102, 241, 0.3);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cost-total .amount {
+    color: #22c55e;
+}
+
+.cost-note {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+/* CTA */
+.estimate-cta {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 16px;
+}
+
+.estimate-cta h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.estimate-cta p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-submit {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-download {
+    padding: 0.75rem 2rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-download:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+}
+
+/* Wizard Actions */
+.wizard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-next {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-next:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-back {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Success Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #1a1a2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 500px;
+    text-align: center;
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-details {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.modal-details ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.modal-details li {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.modal-email {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.btn-modal-close {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teammate-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wizard-actions {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    
+    .btn-next, .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .trust-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+}

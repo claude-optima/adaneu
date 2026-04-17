@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started — AdaNeu</title>
+    <meta name="description" content="Set up your AI expert teammates. Walk through our wizard to configure your needs and get an instant estimate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wizard.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">AdaNeu</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#" class="nav-cta">Get Started →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wizard Container -->
+    <main class="wizard-main">
+        <div class="wizard-container">
+            <!-- Progress Bar -->
+            <div class="wizard-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Organization</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Teammates</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Workload</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-label">Estimate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1: Organization Info -->
+            <div class="wizard-step active" id="step1">
+                <div class="step-header">
+                    <h2>Tell us about your organization</h2>
+                    <p>We'll use this to recommend the right AI teammate configuration.</p>
+                </div>
+                <div class="form-group">
+                    <label for="orgName">Organization Name</label>
+                    <input type="text" id="orgName" placeholder="Acme Corp" required>
+                </div>
+                <div class="form-group">
+                    <label for="orgSize">Team Size</label>
+                    <select id="orgSize">
+                        <option value="">Select team size...</option>
+                        <option value="1-10">1–10 people</option>
+                        <option value="11-50">11–50 people</option>
+                        <option value="51-200">51–200 people</option>
+                        <option value="201-1000">201–1,000 people</option>
+                        <option value="1000+">1,000+ people</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry">
+                        <option value="">Select industry...</option>
+                        <option value="technology">Technology / Software</option>
+                        <option value="finance">Finance / Banking</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                        <option value="government">Government</option>
+                        <option value="consulting">Consulting / Professional Services</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail / E-commerce</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Contact Email</label>
+                    <input type="email" id="contactEmail" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" placeholder="Jane Smith" required>
+                </div>
+                <div class="wizard-actions">
+                    <div></div>
+                    <button class="btn-next" onclick="nextStep(1)">Next: Choose Teammates →</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Teammate Selection -->
+            <div class="wizard-step" id="step2">
+                <div class="step-header">
+                    <h2>Choose your AI expert teammates</h2>
+                    <p>Select the roles you need. Each teammate is a specialized AI expert with deep domain knowledge.</p>
+                </div>
+                <div class="teammate-grid">
+                    <div class="teammate-card" data-role="developer" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">👩‍💻</div>
+                        <h3>Software Developer</h3>
+                        <p>Full-stack development, code reviews, architecture decisions, bug fixes, testing.</p>
+                        <div class="teammate-tokens">~2M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="analyst" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">📊</div>
+                        <h3>Data Analyst</h3>
+                        <p>Data processing, reports, dashboards, SQL queries, insights extraction.</p>
+                        <div class="teammate-tokens">~1.5M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="writer" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">✍️</div>
+                        <h3>Technical Writer</h3>
+                        <p>Documentation, API docs, user guides, knowledge base articles, blog posts.</p>
+                        <div class="teammate-tokens">~1M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="devops" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">🔧</div>
+                        <h3>DevOps Engineer</h3>
+                        <p>CI/CD pipelines, infrastructure as code, monitoring, deployments, cloud management.</p>
+                        <div class="teammate-tokens">~1.8M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="security" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">🔒</div>
+                        <h3>Security Analyst</h3>
+                        <p>Code audits, vulnerability assessment, compliance checks, security policies.</p>
+                        <div class="teammate-tokens">~1.2M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="pm" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">📋</div>
+                        <h3>Project Manager</h3>
+                        <p>Task breakdown, sprint planning, status reports, stakeholder communication.</p>
+                        <div class="teammate-tokens">~800K tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="researcher" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">🔬</div>
+                        <h3>Research Analyst</h3>
+                        <p>Market research, competitive analysis, trend reports, literature reviews.</p>
+                        <div class="teammate-tokens">~1.5M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                    <div class="teammate-card" data-role="support" onclick="toggleTeammate(this)">
+                        <div class="teammate-icon">💬</div>
+                        <h3>Customer Support</h3>
+                        <p>Ticket triage, response drafting, FAQ management, escalation handling.</p>
+                        <div class="teammate-tokens">~1M tokens/day avg</div>
+                        <div class="teammate-check">✓</div>
+                    </div>
+                </div>
+                <div class="selected-count" id="selectedCount">0 teammates selected</div>
+                <div class="wizard-actions">
+                    <button class="btn-back" onclick="prevStep(2)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(2)">Next: Configure Workload →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Workload Configuration -->
+            <div class="wizard-step" id="step3">
+                <div class="step-header">
+                    <h2>Configure your workload</h2>
+                    <p>Adjust how your AI teammates operate to match your needs and budget.</p>
+                </div>
+                <div class="workload-config">
+                    <div class="config-section">
+                        <h3>Availability</h3>
+                        <div class="config-options">
+                            <label class="radio-card">
+                                <input type="radio" name="availability" value="business" checked>
+                                <div class="radio-content">
+                                    <strong>Business Hours</strong>
+                                    <p>8 hours/day, 5 days/week (40 hrs/week)</p>
+                                    <span class="config-badge">Most Popular</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="availability" value="extended">
+                                <div class="radio-content">
+                                    <strong>Extended Hours</strong>
+                                    <p>12 hours/day, 7 days/week (84 hrs/week)</p>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="availability" value="24x7">
+                                <div class="radio-content">
+                                    <strong>24/7 Always On</strong>
+                                    <p>Round-the-clock operation (168 hrs/week)</p>
+                                    <span class="config-badge premium">Enterprise</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Response Model</h3>
+                        <div class="config-options">
+                            <label class="radio-card">
+                                <input type="radio" name="model" value="standard" checked>
+                                <div class="radio-content">
+                                    <strong>Standard</strong>
+                                    <p>Claude Sonnet — Fast, capable, cost-effective</p>
+                                    <span class="config-price">$3 / 1M input tokens</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="model" value="advanced">
+                                <div class="radio-content">
+                                    <strong>Advanced</strong>
+                                    <p>Claude Opus — Maximum capability for complex tasks</p>
+                                    <span class="config-price">$15 / 1M input tokens</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Git Integration</h3>
+                        <div class="config-options">
+                            <label class="radio-card">
+                                <input type="radio" name="git" value="github" checked>
+                                <div class="radio-content">
+                                    <strong>GitHub</strong>
+                                    <p>GitHub repos, Actions, Discussions — included</p>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="git" value="azure-devops">
+                                <div class="radio-content">
+                                    <strong>Azure DevOps</strong>
+                                    <p>Azure Repos, Pipelines, Boards</p>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="git" value="gitlab">
+                                <div class="radio-content">
+                                    <strong>GitLab</strong>
+                                    <p>GitLab repos, CI/CD, Issues</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Compliance & Audit</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-card">
+                                <input type="checkbox" name="compliance" value="immutable-log" checked>
+                                <div class="checkbox-content">
+                                    <strong>Immutable Audit Log</strong>
+                                    <p>Every action is a git commit — included by default</p>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" name="compliance" value="soc2">
+                                <div class="checkbox-content">
+                                    <strong>SOC 2 Reports</strong>
+                                    <p>Monthly compliance reports for SOC 2 audits</p>
+                                </div>
+                            </label>
+                            <label class="checkbox-card">
+                                <input type="checkbox" name="compliance" value="data-residency">
+                                <div class="checkbox-content">
+                                    <strong>Data Residency</strong>
+                                    <p>Choose where your data is processed and stored</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-actions">
+                    <button class="btn-back" onclick="prevStep(3)">← Back</button>
+                    <button class="btn-next" onclick="nextStep(3)">See Your Estimate →</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Estimate & Summary -->
+            <div class="wizard-step" id="step4">
+                <div class="step-header">
+                    <h2>Your AdaNeu Estimate</h2>
+                    <p>Here's a breakdown of your AI teammate configuration and estimated costs.</p>
+                </div>
+                <div class="estimate-container">
+                    <div class="estimate-summary">
+                        <div class="estimate-org" id="estimateOrg"></div>
+                        
+                        <div class="estimate-section">
+                            <h3>Selected Teammates</h3>
+                            <div class="estimate-teammates" id="estimateTeammates"></div>
+                        </div>
+
+                        <div class="estimate-section">
+                            <h3>Configuration</h3>
+                            <div class="estimate-config" id="estimateConfig"></div>
+                        </div>
+
+                        <div class="estimate-section pricing">
+                            <h3>Monthly Cost Estimate</h3>
+                            <div class="cost-breakdown" id="costBreakdown"></div>
+                            <div class="cost-total" id="costTotal"></div>
+                            <div class="cost-note">
+                                * Estimates are based on average token usage patterns. 
+                                Actual costs may vary based on workload intensity. 
+                                Platform fee covers GitHub/Azure infrastructure, monitoring, and support.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="estimate-actions">
+                        <div class="estimate-cta">
+                            <h3>Ready to get started?</h3>
+                            <p>Submit your configuration and our team will set up your AI teammates within 24 hours.</p>
+                            <button class="btn-submit" onclick="submitWizard()">
+                                Submit & Get Started
+                            </button>
+                            <button class="btn-download" onclick="downloadEstimate()">
+                                📄 Download Estimate (PDF)
+                            </button>
+                        </div>
+                        <div class="trust-badges">
+                            <div class="trust-badge">🔒 Git-Tracked & Immutable</div>
+                            <div class="trust-badge">📊 Full Audit Trail</div>
+                            <div class="trust-badge">🚀 Setup in 24 Hours</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-actions">
+                    <button class="btn-back" onclick="prevStep(4)">← Adjust Configuration</button>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">🎉</div>
+            <h2>Configuration Submitted!</h2>
+            <p>Thank you, <span id="modalName"></span>! We've received your AI teammate configuration for <span id="modalOrg"></span>.</p>
+            <div class="modal-details">
+                <p><strong>What happens next:</strong></p>
+                <ol>
+                    <li>Our team reviews your configuration (within 2 hours)</li>
+                    <li>We create your GitHub organization & repos</li>
+                    <li>Your AI teammates are deployed and configured</li>
+                    <li>You receive onboarding documentation via email</li>
+                </ol>
+            </div>
+            <p class="modal-email">A confirmation has been sent to <strong id="modalEmail"></strong></p>
+            <a href="/" class="btn-modal-close">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="wizard.js"></script>
+</body>
+</html>
